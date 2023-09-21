@@ -23,6 +23,7 @@ const[isLoading, setIsLoading]=useState(false);
 useEffect(()=>{
   if ( !currentPage || searchQuery){
   fetchGallery();}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [currentPage, searchQuery]);
   
     
