@@ -20,9 +20,9 @@ const[isLoading, setIsLoading]=useState(false);
     // componentDidMount;
 
 
-useEffect((prev)=>{
-  if ( currentPage || searchQuery)
-  fetchGallery();
+useEffect(()=>{
+  if ( !currentPage || searchQuery){
+  fetchGallery();}
 }, [currentPage, searchQuery]);
   
     
