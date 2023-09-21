@@ -21,6 +21,7 @@ const[isLoading, setIsLoading]=useState(false);
 
 
 useEffect(()=>{
+  // if ( searchQuery===''){return;}
   if ( !currentPage || searchQuery){
   fetchGallery();}
   // eslint-disable-next-line react-hooks/exhaustive-deps
