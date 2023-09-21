@@ -8,8 +8,8 @@ const ImageGallery = ({ hits }) => {
     return (
       <div>
         <ul className={css.listImageGallery}>
-          {hits.map(hit => (
-            <ImageGalleryItem hit={hit} key={hit.id}  />
+          {hits.map((hit, index) => (
+            <ImageGalleryItem hit={hit} key={index}  />
            
           ))}
         </ul>

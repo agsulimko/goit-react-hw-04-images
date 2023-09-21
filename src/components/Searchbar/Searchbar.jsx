@@ -37,8 +37,8 @@ import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor';
                     <TextField 
                     //  className="input"
                      type="text"
-                     autocomplete="off"
-                     autofocus
+                    //  autocomplete="off"
+                    //  autofocus
                     //  placeholder="Search images and photos"
                      name='title'
                      size="small"
