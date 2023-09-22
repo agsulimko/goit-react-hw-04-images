@@ -20,15 +20,8 @@ const App = (prev) => {
 
   useEffect(() => {
     searchQuery && fetchGallery();
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
-
-  //   if (!currentPage || searchQuery) {
-  //     fetchGallery();
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [currentPage, searchQuery]);
 
   const fetchGallery = async () => {
     setIsLoading(true);
