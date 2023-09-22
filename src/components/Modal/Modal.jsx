@@ -1,4 +1,3 @@
-
 //  import React from 'react'
 // import Box from '@mui/material/Box';
 // import Button from '@mui/material/Button';
@@ -34,42 +33,34 @@
 //         aria-describedby="modal-modal-description"
 //       >
 //         <Box sx={style}>
-         
-//           <img src= 
+
+//           <img src=
 // "https://pixabay.com/get/g9fa88d8f527c93fc8a7a32f6b024c94e43ce0ad33aec7b27556725b8cacb75118bbe0e52abd5d11511f607cb820adbab988faa0ca4988dafcd481afa6fc78855_1280.jpg" alt="Image" style={{ width: '100%',   marginBottom: -50, }} />
-            
-          
+
 //         </Box>
 //       </Modal>
 //     </div>
 //   );
 // }
 
-
-
-
 // import React, { Component } from 'react'
 // import css from './Modal.module.css'
 // import {createPortal} from 'react-dom';
 
-
-
 // const modalRoot= document.querySelector('#modal-root');
 // export default class Modal extends Component {
 
- 
 // 	componentDidMount() {
 //         console.log(' modal DidMount');
-		
-//         document.addEventListener('keydown', this.handleKeyEsc);  
+
+//         document.addEventListener('keydown', this.handleKeyEsc);
 //         };
-    
-	
+
 // componentWillUnmount() {
 //         console.log('modal WillUnmount ');
 // 		document.removeEventListener('keydown', this.handleKeyEsc)
 // 	}
-	
+
 //  handleKeyEsc = (e) => {
 // 		if (e.code === 'Escape') this.props.onClose()
 // 		// console.log('Esc');
@@ -80,22 +71,15 @@
 //             this.props.onClose();
 //         }
 //     }
- 	
+
 // // 		const { children, toggleModal } = this.props
 // render() {
 //     return createPortal(
 //         <div className={css.modalBackdrop} onClick={this.handlBackdropClick}>
-// <div className={css.modalContent}>{this.props.children} </div> 
+// <div className={css.modalContent}>{this.props.children} </div>
 // </div>,
 // modalRoot,
 //     );
 // }
 
 // }
-
-
-
-
-
-
-
