@@ -19,12 +19,16 @@ const App = (prev) => {
   // componentDidMount;
 
   useEffect(() => {
-    // if ( searchQuery===''){return;}
-    if (!currentPage || searchQuery) {
-      fetchGallery();
-    }
+    searchQuery && fetchGallery();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentPage, searchQuery]);
+  }, [searchQuery]);
+
+  //   if (!currentPage || searchQuery) {
+  //     fetchGallery();
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [currentPage, searchQuery]);
 
   const fetchGallery = async () => {
     setIsLoading(true);
@@ -47,8 +51,7 @@ const App = (prev) => {
         setQuantityPage(Math.ceil(totalHits / 12));
       }
     } catch (err) {
-      setError(err.message);
-      console.log(error);
+      setError(error.message);
     } finally {
       setIsLoading(false);
     }
@@ -71,7 +74,7 @@ const App = (prev) => {
       <Searchbar onSubmit={hendleFormSubmit} />
 
       {isLoading && <Loader />}
-      {gallery && gallery.length > 0 && <ImageGallery hits={gallery} />}
+      <ImageGallery hits={gallery} />
       {currentPage < quantityPage && (
         <ButtonLoad handleBtnLoad={handleBtnLoad} />
       )}
