@@ -19,36 +19,39 @@ const App = (prev) => {
   // componentDidMount;
 
   useEffect(() => {
+    const fetchGallery = async () => {
+      setIsLoading(true);
+      try {
+        const { hits, totalHits } = await getAllPhotos(
+          searchQuery,
+          currentPage
+        );
+
+        if (!hits.length) {
+          Notify.failure(
+            "Sorry, there are no images matching your search query. Please try again."
+          );
+          return;
+        }
+
+        if (hits.length === 0) {
+          setError("Not data found");
+        }
+
+        if (hits.length > 0) {
+          setGallery((prevGallery) => [...prevGallery, ...hits]);
+          setQuantityPage(Math.ceil(totalHits / 12));
+        }
+      } catch (err) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
     searchQuery && fetchGallery();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
-
-  const fetchGallery = async () => {
-    setIsLoading(true);
-    try {
-      const { hits, totalHits } = await getAllPhotos(searchQuery, currentPage);
-
-      if (!hits.length) {
-        Notify.failure(
-          "Sorry, there are no images matching your search query. Please try again."
-        );
-        return;
-      }
-
-      if (hits.length === 0) {
-        setError("Not data found");
-      }
-
-      if (hits.length > 0) {
-        setGallery((prevGallery) => [...prevGallery, ...hits]);
-        setQuantityPage(Math.ceil(totalHits / 12));
-      }
-    } catch (err) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const hendleFormSubmit = (searchQuery) => {
     setCurrentPage(1);
