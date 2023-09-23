@@ -46,7 +46,7 @@ const App = (prev) => {
   useEffect(() => {
     searchQuery && fetchGallery();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchQuery]);
+  }, [searchQuery, currentPage]);
 
   const hendleFormSubmit = (searchQuery) => {
     setCurrentPage(1);
@@ -56,7 +56,7 @@ const App = (prev) => {
     setSearchQuery(searchQuery);
   };
 
-  const handleBtnLoad = () => {
+  const handleBtnLoad = (prevPage) => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 

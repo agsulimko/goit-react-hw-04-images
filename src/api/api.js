@@ -15,7 +15,7 @@ const getAllPhotos = async (value, page) => {
       per_page: 12,
     },
   });
-  console.log(data);
+  // console.log(data);
   return data;
 };
 

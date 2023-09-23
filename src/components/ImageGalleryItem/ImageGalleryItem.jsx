@@ -7,19 +7,16 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  // width: 1200,
-  // bgcolor: 'background.paper',
-  bgcolor: "rgba(205, 214, 219, 0)",
+  // width: 0,
+  bgcolor: "background.paper",
+  // bgcolor: "rgba(205, 214, 219, 0)",
   border: "none",
   boxShadow: 24,
   p: 4,
   padding: 0,
 };
 
-const ImageGalleryItem = ({
-  hit: { webformatURL, largeImageURL, tags },
-  id,
-}) => {
+const ImageGalleryItem = ({ hit: { webformatURL, largeImageURL, tags } }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
