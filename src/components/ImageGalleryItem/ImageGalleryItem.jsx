@@ -1,6 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import css from "./ImageGalleryItem.module.css";
 
 const style = {
   position: "absolute",
@@ -23,7 +24,7 @@ const ImageGalleryItem = ({ hit: { webformatURL, largeImageURL, tags } }) => {
 
   return (
     <>
-      <li onClick={handleOpen} className="gallery-item">
+      <li onClick={handleOpen} className={css.galleryItem}>
         <img src={webformatURL} alt={tags} width={260} height={150} />
       </li>
       <div>
